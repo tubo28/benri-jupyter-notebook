@@ -1,6 +1,5 @@
 FROM jupyter/datascience-notebook:2022-12-26
 
-# Install Ruby and Japanese support for matplotlib
 USER root
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
@@ -8,7 +7,8 @@ RUN apt-get update && \
     libtool \
     make \
     ruby-dev \
-    fonts-ipaexfont && \
+    fonts-ipaexfont \
+    protobuf-compiler && \
     gem install --no-document \
     cztop \
     iruby && \
@@ -17,4 +17,5 @@ RUN apt-get update && \
 
 USER $NB_USER
 RUN iruby register --force && \
-    pip install japanize_matplotlib
+    pip install japanize_matplotlib && \
+    pip install protobuf
