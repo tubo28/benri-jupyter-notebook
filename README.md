@@ -1,7 +1,9 @@
-# jupyter
+# benri-jupyter-notebook
 
-My Jupyter Lab configuration
+もろもろ入り Jupyter Notebook docker-compose
 
-* No password
+* jupyter/datascience-notebook ベース
 * japanize_matplotlib
 * IRuby
+* protoc
+* ローカル専用（パスワード無し）
